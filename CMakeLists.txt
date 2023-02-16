@@ -271,7 +271,7 @@ if (MSVC)
   # Suppress linker warnings about files with no symbols defined.
   set(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} /ignore:4221")
 
-  if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+  if ((CMAKE_CXX_COMPILER_ID STREQUAL "MSVC") OR (CMAKE_CXX_COMPILER_ID STREQUAL "Clang"))
     # Configure Resource Compiler
     enable_language(RC)
     # use English language (0x409) in resource compiler
